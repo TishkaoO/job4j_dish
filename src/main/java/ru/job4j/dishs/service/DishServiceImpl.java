@@ -47,7 +47,7 @@ public class DishServiceImpl implements DishService {
                         .description(dish.getDescription())
                         .build())
                 .orElseThrow(() -> {
-                    log.info("This dish with id: " + dish.getId() + " is not exists");
+                    log.info("This dish with id: " + dish.getId() + " is not exists!");
                     return new NoSuchElementException("Dish is not exists");
                 });
         return dishMapper.toDto(findDishAndUpdate);
