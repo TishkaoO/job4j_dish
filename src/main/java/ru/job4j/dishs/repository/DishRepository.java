@@ -1,6 +1,6 @@
-package com.example.job4j_dish.repository;
+package ru.job4j.dishs.repository;
 
-import com.example.job4j_dish.model.Dish;
+import ru.job4j.dishs.model.Dish;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

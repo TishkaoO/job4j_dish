@@ -1,9 +1,9 @@
-package com.example.job4j_dish.service;
+package ru.job4j.dishs.service;
 
-import com.example.job4j_dish.dto.DishDto;
-import com.example.job4j_dish.mapper.DishMapper;
-import com.example.job4j_dish.model.Dish;
-import com.example.job4j_dish.repository.DishRepository;
+import ru.job4j.dishs.dto.DishDto;
+import ru.job4j.dishs.mapper.DishMapper;
+import ru.job4j.dishs.model.Dish;
+import ru.job4j.dishs.repository.DishRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

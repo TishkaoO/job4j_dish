@@ -1,4 +1,4 @@
-package com.example.job4j_dish;
+package ru.job4j.dishs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

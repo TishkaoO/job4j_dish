@@ -1,13 +1,12 @@
-package com.example.job4j_dish.controller;
+package ru.job4j.dishs.controller;
 
-import com.example.job4j_dish.dto.DishDto;
-import com.example.job4j_dish.model.Dish;
-import com.example.job4j_dish.service.DishService;
+import ru.job4j.dishs.dto.DishDto;
+import ru.job4j.dishs.model.Dish;
+import ru.job4j.dishs.service.DishService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 

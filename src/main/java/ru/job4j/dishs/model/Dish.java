@@ -1,4 +1,4 @@
-package com.example.job4j_dish.model;
+package ru.job4j.dishs.model;
 
 import jakarta.persistence.*;
 import lombok.*;

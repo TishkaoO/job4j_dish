@@ -1,7 +1,7 @@
-package com.example.job4j_dish.service;
+package ru.job4j.dishs.service;
 
-import com.example.job4j_dish.dto.DishDto;
-import com.example.job4j_dish.model.Dish;
+import ru.job4j.dishs.dto.DishDto;
+import ru.job4j.dishs.model.Dish;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public interface DishService {
 
     DishDto save(Dish dish);
 
-    void deleteById (Long id);
+    void deleteById(Long id);
 
     DishDto update(Dish dish);
 

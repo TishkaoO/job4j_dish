@@ -1,7 +1,7 @@
-package com.example.job4j_dish.mapper;
+package ru.job4j.dishs.mapper;
 
-import com.example.job4j_dish.dto.DishDto;
-import com.example.job4j_dish.model.Dish;
+import ru.job4j.dishs.dto.DishDto;
+import ru.job4j.dishs.model.Dish;
 import org.mapstruct.Mapper;
 
 import java.util.List;

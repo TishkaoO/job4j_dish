@@ -1,4 +1,4 @@
-package com.example.job4j_dish.dto;
+package ru.job4j.dishs.dto;
 
 import lombok.*;
 
