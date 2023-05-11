@@ -14,7 +14,7 @@ import java.util.NoSuchElementException;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class DishServiceImpl {
+public class DishService {
     private final DishRepository dishRepository;
     private final DishMapper dishMapper;
 

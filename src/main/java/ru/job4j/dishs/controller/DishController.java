@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.job4j.dishs.service.DishServiceImpl;
+import ru.job4j.dishs.service.DishService;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/api/v1/dishs")
 @RequiredArgsConstructor
 public class DishController {
-    private final DishServiceImpl dishService;
+    private final DishService dishService;
 
     @GetMapping
     public List<DishDto> getAllDishs() {
