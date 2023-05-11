@@ -14,11 +14,10 @@ import java.util.NoSuchElementException;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class DishServiceImpl implements DishService {
+public class DishServiceImpl {
     private final DishRepository dishRepository;
     private final DishMapper dishMapper;
 
-    @Override
     public DishDto save(Dish dish) {
         Dish builder = Dish.builder()
                 .name(dish.getName())
@@ -29,7 +28,6 @@ public class DishServiceImpl implements DishService {
         return dishMapper.toDto(builder);
     }
 
-    @Override
     public void deleteById(Long id) {
         Dish findDish = dishRepository.findById(id)
                 .orElseThrow(() -> {
@@ -39,7 +37,6 @@ public class DishServiceImpl implements DishService {
         dishRepository.delete(findDish);
     }
 
-    @Override
     public DishDto update(Dish dish) {
         Dish findDishAndUpdate = dishRepository.findById(dish.getId())
                 .map(entity -> Dish.builder()
@@ -53,7 +50,6 @@ public class DishServiceImpl implements DishService {
         return dishMapper.toDto(findDishAndUpdate);
     }
 
-    @Override
     public DishDto getById(Long id) {
         return dishRepository.findById(id)
                 .map(dish -> dishMapper.toDto(dish))
@@ -63,7 +59,6 @@ public class DishServiceImpl implements DishService {
                 });
     }
 
-    @Override
     public List<DishDto> getAllDishs() {
         List<Dish> dishs = dishRepository.findAll();
         return dishMapper.toDto(dishs);
