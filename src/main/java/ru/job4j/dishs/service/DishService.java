@@ -29,38 +29,36 @@ public class DishService {
     }
 
     public void deleteById(Long id) {
-        Dish findDish = dishRepository.findById(id)
-                .orElseThrow(() -> {
-                    log.info("This dish with id: " + id + " is not exists");
-                    return new NoSuchElementException("Dish is not exists");
-                });
-        dishRepository.delete(findDish);
+        Dish dish = getDishByIdOrElseThrow(id);
+        dishRepository.delete(dish);
     }
 
     public DishDto update(Dish dish) {
-        Dish findDishAndUpdate = dishRepository.findById(dish.getId())
-                .map(entity -> Dish.builder()
-                        .name(dish.getName())
-                        .description(dish.getDescription())
-                        .build())
-                .orElseThrow(() -> {
-                    log.info("This dish with id: " + dish.getId() + " is not exists!");
-                    return new NoSuchElementException("Dish is not exists");
-                });
-        return dishMapper.toDto(findDishAndUpdate);
+        Dish entity = getDishByIdOrElseThrow(dish.getId());
+        Dish builder = Dish.builder()
+                .id(entity.getId())
+                .name(entity.getName())
+                .description(entity.getDescription())
+                .build();
+        dishRepository.save(builder);
+        return dishMapper.toDto(builder);
     }
 
     public DishDto getById(Long id) {
-        return dishRepository.findById(id)
-                .map(dish -> dishMapper.toDto(dish))
-                .orElseThrow(() -> {
-                    log.info("This dish with id: " + id + " is not exists");
-                    return new NoSuchElementException("Dish is not exists");
-                });
+        Dish dish = getDishByIdOrElseThrow(id);
+        return dishMapper.toDto(dish);
     }
 
     public List<DishDto> getAllDishs() {
         List<Dish> dishs = dishRepository.findAll();
         return dishMapper.toDto(dishs);
+    }
+
+    private Dish getDishByIdOrElseThrow(Long id) {
+        return dishRepository.findById(id)
+                .orElseThrow(() -> {
+                    log.info("This dish with id: " + id + " is not exists");
+                    return new NoSuchElementException("Dish is not exists");
+                });
     }
 }

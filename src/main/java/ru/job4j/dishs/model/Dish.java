@@ -8,18 +8,17 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "dishs")
+@Table(name = "dish")
 public class Dish {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
-    @Column(name = "dish_id")
     private Long id;
 
     private String name;
 
     private String description;
+
+    double price;
 }

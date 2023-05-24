@@ -1,5 +1,6 @@
-CREATE TABLE IF NOT EXISTS dishs(
-dish_id SERIAL PRIMARY KEY,
-name VARCHAR not null,
-description TEXT not null
+CREATE TABLE IF NOT EXISTS dish(
+id SERIAL PRIMARY KEY,
+name VARCHAR not null unique,
+description VARCHAR not null,
+price VARCHAR not null
 );
